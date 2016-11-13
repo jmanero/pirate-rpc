@@ -3,7 +3,7 @@ layout: default
 title: Testing
 
 icon: check
-order: 2
+order: 10
 ---
 
 # {{ page.title }}

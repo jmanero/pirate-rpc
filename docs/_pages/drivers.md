@@ -34,7 +34,7 @@ The [WS Driver] has functional examples of the required client methods and event
 
 ## Sessions and Framing
 
-The `WS` Web Socket driver is a good example of how little is necessary to adapt Pirate to existing session-oriented transports with build-in message framing. Pirate, with additional driver-complexity, can be adapted to transports without framing, or even without sessions.
+The `WS` Web Socket driver is a good example of how little is necessary to adapt Pirate to existing session-oriented transports with built-in message framing. With additional driver-complexity, Pirate can be adapted to transports without framing, or even without sessions.
 
 ### Example: TCP
 
@@ -61,8 +61,9 @@ function client(session, socket) {
   reader.on('frame', (data) => session._receive(data));
 
   // Prepend a length header outgoing messages
-  session._send = (data) => {
+  session._send = (message) => {
     const header = Buffer.alloc(4);
+    const data = Buffer.from(JSON.stringify(message), 'utf8')
 
     header.writeUInt32BE(data.length, 0);
     socket.write(Buffer.concat([header, data]));
@@ -107,7 +108,7 @@ class Reader extends EventEmitter {
     this.buffer = this.buffer.slice(length + 4);
 
     try {
-      const frame = JSON.parse(data);
+      const frame = JSON.parse(data.toString('utf8'));
 
       // Emit the frame to something else
       this.emit('frame', frame);
@@ -168,7 +169,7 @@ class Server extends EventEmitter {
     this.connections = new Map();
 
     socket.on('message', (data, remote) => {
-      this.accept(remote.address, remote.port)._receive(data);
+      this.accept(remote.address, remote.port).receive(data);
     });
   }
 
@@ -204,7 +205,7 @@ class Client extends EventEmitter {
     this.socket.send(data, 0, data.length, this.port, this.address, callback);
   }
 
-  _receive(data) {
+  receive(data) {
     try {
       const frame = JSON.parse(data.toString('utf8'));
       this.emit('frame', frame);
