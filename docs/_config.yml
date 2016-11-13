@@ -1,0 +1,23 @@
+name: Pirate
+description:
+
+project:
+  owner: jmanero
+  repo: pirate
+
+url: https://jmanero.github.io/pirate-rpc
+baseurl: /pirate-rpc
+
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+
+collections:
+  pages:
+    output: true
+
+gems:
+  - jemoji

@@ -1,11 +1,11 @@
-Pirate Arr-PC
+Pirate RPC
 =============
 
-Pirate RPC is a framework for implementing session-oriented remote procedure APIs. It is suited very well for building service-to-service WebSocket interfaces.
+Pirate RPC is a framework for implementing session-oriented remote procedure APIs. It is very well suited for building service-to-service WebSocket interfaces, but really doesn't care that much. Pirate uses a [Driver interface] to abstract protocol-specific interfaces out of its internals.
 
 ![They be more like guidelines](docs/images/guidelines.gif)
 
-[Detailed documentation is available on the repository's GitHub Pages site](https://jmanero.github.io/pirate)
+[Detailed documentation is available on the repository's GitHub Pages site](https://jmanero.github.io/pirate-rpc)
 
 ### Adding Documentation Pages
 
@@ -25,5 +25,6 @@ order: 200
 
 Pages are rendered by Jekyll and can include [Liquid template] tags and filters.
 
+[Driver interface]: https://jmanero.github.io/pirate-rpc/pages/drivers.html
 [Font Awesome]: http://fontawesome.io/icons/
 [Liquid template]: https://jekyllrb.com/docs/templates/
