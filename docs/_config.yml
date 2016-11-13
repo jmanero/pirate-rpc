@@ -3,7 +3,7 @@ description:
 
 project:
   owner: jmanero
-  repo: pirate
+  repo: pirate-rpc
 
 url: https://jmanero.github.io/pirate-rpc
 baseurl: /pirate-rpc
