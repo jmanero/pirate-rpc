@@ -1,0 +1,12 @@
+docs/
+
+Gemfile
+Gemfile.lock
+
+.eslintrc.json
+.istanbul.yml
+.jsdoc.json
+.ruby-version
+.travis.yml
+
+*.tgz
