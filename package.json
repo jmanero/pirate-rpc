@@ -8,6 +8,7 @@
     "cover": "rm -Rf docs/coverage && istanbul cover _mocha",
     "doc": "rm -rf docs/jsdoc && jsdoc -c .jsdoc.json lib",
     "lint": "eslint lib/*.js lib/**/*.js bin/* test/*.js",
+    "report": "coveralls < ./docs/coverage/lcov.info",
     "site": "bundle install && cd docs && bundle exec jekyll serve",
     "clean": "rm -rf docs/jsdoc docs/coverage docs/_site docs/.sass-cache"
   },
