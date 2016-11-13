@@ -1,6 +1,6 @@
 {
   "name": "pirate-rpc",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A simnple JSON RPC shceme",
   "main": "lib/pirate.js",
   "scripts": {
