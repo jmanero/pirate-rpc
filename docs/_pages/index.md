@@ -9,7 +9,7 @@ order: 1
 
 # {{ site.name }}
 
-Pirate RPC is a framework for implementing session-oriented remote procedure APIs. It is very well suited for building service-to-service WebSocket interfaces, but really doesn't care that much. Pirate uses a [Driver interface] to abstract protocol-specific interfaces out of its internals.
+Pirate RPC is a framework for implementing session-oriented remote procedure APIs. It is very well suited for building service-to-service WebSocket interfaces, but really doesn't care that much. Pirate uses a [Driver interface](pages/drivers.html) to abstract protocol-specific interfaces out of its internals.
 
 ![They be more like guidelines]({{ site.baseurl }}/images/guidelines.gif)
 
